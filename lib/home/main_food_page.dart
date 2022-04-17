@@ -19,7 +19,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
       body: Column(
         children: [
           Container(
-            margin: EdgeInsets.only(top: Dimensions.height45, bottom: Dimensions.height15),
+            margin: EdgeInsets.only(
+                top: Dimensions.height45, bottom: Dimensions.height15),
             padding: EdgeInsets.symmetric(horizontal: Dimensions.width20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,7 +61,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
               ],
             ),
           ),
-          const FoodPage()
+          const Expanded(
+            child: SingleChildScrollView(
+              child: FoodPage(),
+            ),
+          ),
         ],
       ),
     );

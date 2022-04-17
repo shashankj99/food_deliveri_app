@@ -61,7 +61,76 @@ class _FoodPageState extends State<FoodPage> {
               borderRadius: BorderRadius.circular(5.0),
             ),
           ),
-        )
+        ),
+        SizedBox(
+          height: Dimensions.height30,
+        ),
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width30),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              const BigText(
+                text: "Popular",
+              ),
+              SizedBox(
+                width: Dimensions.width10,
+              ),
+              Container(
+                margin: const EdgeInsets.only(
+                  bottom: 3,
+                ),
+                child: const BigText(
+                  text: ",",
+                  color: Colors.black26,
+                ),
+              ),
+              SizedBox(
+                width: Dimensions.width10,
+              ),
+              Container(
+                margin: const EdgeInsets.only(
+                  bottom: 2,
+                ),
+                child: const SmallText(
+                  text: "Food Pairing",
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 1200,
+          child: ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                  left: Dimensions.width20,
+                  right: Dimensions.width20,
+                  bottom: Dimensions.height10,
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 120,
+                      height: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(Dimensions.width20),
+                        color: Colors.white38,
+                        image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/image/food0.png"),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
       ],
     );
   }
@@ -118,15 +187,20 @@ class _FoodPageState extends State<FoodPage> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Dimensions.radius30),
               image: const DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage("assets/image/food0.png")),
+                fit: BoxFit.cover,
+                image: AssetImage("assets/image/food0.png"),
+              ),
             ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
               height: Dimensions.pageViewTextContainer,
-              margin: EdgeInsets.only(left: Dimensions.width30, right: Dimensions.width30, bottom: Dimensions.height30,),
+              margin: EdgeInsets.only(
+                left: Dimensions.width30,
+                right: Dimensions.width30,
+                bottom: Dimensions.height30,
+              ),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(Dimensions.radius20),
                   color: Colors.white,
@@ -146,7 +220,10 @@ class _FoodPageState extends State<FoodPage> {
                     ),
                   ]),
               child: Container(
-                padding: EdgeInsets.only(left: Dimensions.width15, top: Dimensions.height15, right: Dimensions.width15),
+                padding: EdgeInsets.only(
+                    left: Dimensions.width15,
+                    top: Dimensions.height15,
+                    right: Dimensions.width15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
