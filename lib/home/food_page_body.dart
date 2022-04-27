@@ -99,37 +99,87 @@ class _FoodPageState extends State<FoodPage> {
             ],
           ),
         ),
-        SizedBox(
-          height: 1200,
-          child: ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return Container(
-                margin: EdgeInsets.only(
-                  left: Dimensions.width20,
-                  right: Dimensions.width20,
-                  bottom: Dimensions.height10,
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 120,
-                      height: 120,
+        ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(
+                left: Dimensions.width20,
+                right: Dimensions.width20,
+                bottom: Dimensions.height10,
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    width: Dimensions.listViewImageSize,
+                    height: Dimensions.listViewImageSize,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(Dimensions.width20),
+                      color: Colors.white38,
+                      image: const DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage("assets/image/food0.png"),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: Dimensions.listViewTextContainerSize,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(Dimensions.width20),
-                        color: Colors.white38,
-                        image: const DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage("assets/image/food0.png"),
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(
+                            Dimensions.radius20,
+                          ),
+                          bottomRight: Radius.circular(
+                            Dimensions.radius20,
+                          ),
+                        ),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          left: Dimensions.width10,
+                          right: Dimensions.width10,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const BigText(
+                              text: "Nutritious fruit meal in China",
+                            ),
+                            const SmallText(text: "With chinese characteristics",),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                IconAndText(
+                                  iconData: Icons.circle_sharp,
+                                  text: "Normal",
+                                  iconColor: AppColors.iconColor1,
+                                ),
+                                IconAndText(
+                                  iconData: Icons.location_on,
+                                  text: "1.47 KM",
+                                  iconColor: AppColors.mainColor,
+                                ),
+                                IconAndText(
+                                  iconData: Icons.access_time_outlined,
+                                  text: "32 min",
+                                  iconColor: AppColors.iconColor2,
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  ],
-                ),
-              );
-            },
-          ),
+                  ),
+                ],
+              ),
+            );
+          },
         ),
       ],
     );
